@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CHAT-DAPP-NEXTJS
 
-## Getting Started
+This is a chat DApp project built with Next.js, using Ganache for the local blockchain environment and TypeScript for a better development experience.
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (>=12.x)
+- Yarn
+- Truffle
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Follow these steps to set up and run the development environment:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Install Node.js:**
 
-## Learn More
+    Download and install Node.js from the [official website](https://nodejs.org/).
 
-To learn more about Next.js, take a look at the following resources:
+2. **Clone the repository:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```sh
+    git clone https://github.com/DidacTello/CHAT-DAPP-NEXTJS
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Navigate to the project directory:**
 
-## Deploy on Vercel
+    ```sh
+    cd CHAT-DAPP-NEXTJS
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Install dependencies:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```sh
+    yarn install
+    ```
+
+5. **Install Ganache CLI via Truffle:**
+
+    ```sh
+    truffle develop
+    ```
+
+## Development Setup
+
+1. **Start Ganache:**
+
+    ```sh
+    truffle develop
+    ```
+
+    This will start the Ganache CLI integrated with Truffle and open a Truffle console.
+
+2. **Compile smart contracts:**
+
+    In the Truffle console, run:
+
+    ```sh
+    compile
+    ```
+
+3. **Migrate smart contracts to the blockchain:**
+
+    In the Truffle console, run:
+
+    ```sh
+    migrate --reset
+    ```
+
+4. **Start the development server:**
+
+    Open a new terminal and navigate to the project directory, then run:
+
+    ```sh
+    yarn dev
+    ```
+
+Your development server should now be running at [http://localhost:3000](http://localhost:3000).
+
+## Author
+
+Made by Dídac Tello
+
+---
