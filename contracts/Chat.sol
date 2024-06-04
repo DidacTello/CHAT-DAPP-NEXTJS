@@ -1,14 +1,14 @@
-// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
 contract Chat {
-    // Struct to store user information
+
     struct User {
         string username;
-        uint256 userId; // Unique user ID for registration
+        uint256 userId; 
     }
 
-    // Struct to store message information
+
     struct Message {
         string senderUsername;
         string receiverUsername;
@@ -16,19 +16,19 @@ contract Chat {
         uint256 timestamp;
     }
 
-    // Mapping to store users by username
+
     mapping(string => User) public users;
 
-    // Mapping to store registered usernames
+
     mapping(string => bool) private registeredUsernames;
 
-    // Array to store all usernames
+
     string[] private allUsernames;
 
-    // Mapping to store messages between users
+
     mapping(string => Message[]) private messagesBetweenUsers;
 
-    // Counter for assigning unique user IDs
+
     uint256 public nextUserId = 1;
 
     // Events for user registration and message sending

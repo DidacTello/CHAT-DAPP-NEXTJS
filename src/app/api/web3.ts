@@ -12,7 +12,6 @@ const initializeWeb3 = () => {
       ChatContract.abi,
       (ChatContract.networks as any)[networkId].address
     );
-    console.log(chatContract,web3)
   }
 };
 

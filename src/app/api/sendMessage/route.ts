@@ -41,7 +41,6 @@ export async function POST(req: Request) {
   const account = accounts[0];
 
   try {
-    console.log(senderUsername,receiverUsername)
     await chatContract.methods.sendMessage(senderUsername, receiverUsername, message).send({ from: account, gas: 3000000 });
     return new Response(JSON.stringify({ message: 'Message sent successfully' }), { status: 200 });
   } catch (error: any) {

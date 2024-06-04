@@ -24,7 +24,6 @@ const Register: React.FC = () => {
         setError(data.error);
         localStorage.setItem('user', username);
       }
-      console.log('0aaa')
       router.push('/chat');
     } catch (error) {
       setError('An unexpected error occurred. Please try again later.');
