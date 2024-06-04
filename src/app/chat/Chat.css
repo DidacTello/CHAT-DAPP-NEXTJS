@@ -1,0 +1,105 @@
+body {
+  background: #F0F4F9;
+  margin: 0px;
+  height: 100%;
+  font-family: sans-serif;
+  display: flex; /* Use flexbox to layout the user menu and chat container side by side */
+}
+
+.user-menu {
+  width: 20%;
+  height: 100vh; /* Full viewport height */
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  background: #fff;
+  padding: 1rem;
+}
+
+.user-menu .user {
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-menu .user:hover {
+  background: #f0f0f0;
+}
+
+.chat {
+  height: 100vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.625rem;
+  border: 0px solid #FFF;
+  background: #FFF;
+  max-width: 50rem;
+  display: flex; /* Allow for stacking message container and input area */
+  flex-direction: column; /* Arrange elements vertically */
+  position: relative;
+}
+
+.chat .messages {
+  overflow-y: auto;
+  overflow-x: none;
+  max-height: 100%;
+  max-height: calc(100% - 5rem);
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem; /* Add some padding for visual separation */
+}
+
+.chat .messages .message {
+  border-radius: 0.625rem;
+  border: 0px solid #1E1F20;
+  background: #F0F4F9;
+  margin-left: 1rem; /* Adjust margin for better readability */
+  padding: 1rem;
+  width: fit-content;
+  max-width: 100%;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+
+.chat .messages .message.user {
+  background: #b9ff9f;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.chat .input-area {
+  position: absolute;
+  border-radius: 2.5rem;
+  border: 2px solid #93A9C3;
+  background: #FFF;
+  width: 80%;
+  height: 2.9375rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  bottom: 0;
+  flex-shrink: 0;
+}
+
+.chat .input-area input {
+  width: 85%;
+  height: 100%;
+  margin-left: 1.3rem;
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+}
+
+.chat .input-area button {
+  position: absolute;
+  margin-top: 0.55rem;
+  right: 0.5rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  line-height: normal;
+}
