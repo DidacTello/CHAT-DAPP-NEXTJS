@@ -64,27 +64,34 @@ const Chat: React.FC<PageProps> = () => {
       router.push('/');
     else
       setUser(localStorage.getItem('user') ?? '');
+      getMessages();
 
-    async function getMessages() {
-      if (!user || !receiverUsername) return;
-      const url = `/api/sendMessage?senderUsername=${user}&receiverUsername=${receiverUsername}`;
-      const data = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if (data.ok) {
-        const result = await data.json();
-        setMessages(result.messages);
-      } else {
-        const result = await data.json();
-        console.error('Error fetching messages:', result.error);
-      }
-    }
-    getMessages();
+      // Set up interval to fetch messages every 3 seconds
+      const interval = setInterval(() => {
+        getMessages();
+      }, 3000);
+  
+      // Clean up interval on component unmount
+      return () => clearInterval(interval);
   }, [reload, user, receiverUsername]);
 
+  async function getMessages() {
+    if (!user || !receiverUsername) return;
+    const url = `/api/sendMessage?senderUsername=${user}&receiverUsername=${receiverUsername}`;
+    const data = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (data.ok) {
+      const result = await data.json();
+      setMessages(result.messages);
+    } else {
+      const result = await data.json();
+      console.error('Error fetching messages:', result.error);
+    }
+  }
   return (
     <>
       <div className="user-menu">
